@@ -121,7 +121,7 @@ public class DtfPage {
     }
 
     public DtfPage enterAccountButtonClick() {
-        step("Нажать кнопку 'Почта'", () ->
+        step("Нажать кнопку 'Войти'", () ->
             enterAccountButton.click());
         return this;
     }
