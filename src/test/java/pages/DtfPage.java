@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.step;
 
 public class DtfPage {
 
@@ -30,89 +31,110 @@ public class DtfPage {
             profileName = $("[data-gtm=\"Account — Profile — Click\"]");
 
     public DtfPage openPage() {
-        open("https://dtf.ru/");
+        step("Открыть 'https://dtf.ru/'", () ->
+            open("https://dtf.ru/"));
         return this;
     }
 
     public DtfPage checkMenuItems() {
-        popularButton.shouldHave(text("Популярное"));
-        newButton.shouldHave(text("Свежее"));
-        jobsButton.shouldHave(text("Вакансии"));
-        ratingButton.shouldHave(text("Рейтинг DTF"));
-        subsButton.shouldHave(text("Подписки"));
+        step("Проверка отображения пункта меню 'Популярное'", () ->
+            popularButton.shouldHave(text("Популярное")));
+        step("Проверка отображения пункта меню 'Свежее'", () ->
+            newButton.shouldHave(text("Свежее")));
+        step("Проверка отображения пункта меню 'Вакансии'", () ->
+            jobsButton.shouldHave(text("Вакансии")));
+        step("Проверка отображения пункта меню 'Рейтинг DTF'", () ->
+            ratingButton.shouldHave(text("Рейтинг DTF")));
+        step("Проверка отображения пункта меню 'Подписки'", () ->
+            subsButton.shouldHave(text("Подписки")));
         return this;
     }
 
     public DtfPage aboutProjectButtonClick() {
-        aboutProjectButton.click();
+        step("Нажать кнопку 'О проекте'", () ->
+            aboutProjectButton.click());
         return this;
     }
 
     public DtfPage aboutProjectCheckHeader() {
-        aboutProjectHeader.shouldHave(text("Что такое DTF"));
+        step("Проверка заголовка страницы 'О проекте'", () ->
+            aboutProjectHeader.shouldHave(text("Что такое DTF")));
         return this;
     }
 
     public DtfPage industryButtonClick() {
-        industryButton.click();
+        step("Нажать кнопку перехода в подсайт 'Индустрия'", () ->
+            industryButton.click());
         return this;
     }
 
     public DtfPage industryCheckDescription() {
-        subSiteHeaderDescription.shouldHave(text("Новости и статьи для тех," +
-                " кто хочет знать, как устроена игровая индустрия." +
-                " Тут публикуются чарты, аналитика, финансовые отчёты, анонсы мероприятий и мнения."));
+        step("Проверка описания подсайта 'Индустрия'", () ->
+            subSiteHeaderDescription.shouldHave(text("Новости и статьи для тех," +
+                    " кто хочет знать, как устроена игровая индустрия." +
+                    " Тут публикуются чарты, аналитика, финансовые отчёты, анонсы мероприятий и мнения.")));
         return this;
     }
 
     public DtfPage search(String text) {
-        searchInput.setValue(text);
-        searchResultButton.click();
+        step("Ввести текст " + text + "  в поискую строку", () ->
+            searchInput.setValue(text));
+        step("Нажать кнопку поиска", () ->
+            searchResultButton.click());
         return this;
     }
 
     public DtfPage checkArticleHeaderInSearchResults(String headerText) {
-        searchResultArticleHeader.shouldHave(text(headerText));
+        step("Проверка, что заголовок статьи соответствует '" + headerText, () ->
+            searchResultArticleHeader.shouldHave(text(headerText)));
         return this;
     }
 
     public DtfPage loginButtonClick() {
-        loginButton.click();
+        step("Нажать кнопку 'Войти'", () ->
+            loginButton.click());
         return this;
     }
 
     public DtfPage signupLoginButtonClick() {
-        signupLoginButton.click();
+        step("Нажать кнопку 'Войти'", () ->
+            signupLoginButton.click());
         return this;
     }
 
     public DtfPage logWithEmailClick() {
-        logWithEmailButton.click();
+        step("Нажать кнопку 'Почта'", () ->
+            logWithEmailButton.click());
         return this;
     }
 
     public DtfPage setLogEmail(String logEmail) {
-        emailInput.setValue(logEmail);
+        step("Ввести email", () ->
+            emailInput.setValue(logEmail));
         return this;
     }
 
     public DtfPage setLogPassword(String logPassword) {
-        passwordInput.setValue(logPassword);
+        step("Ввести пароль", () ->
+            passwordInput.setValue(logPassword);
         return this;
     }
 
     public DtfPage enterAccountButtonClick() {
-        enterAccountButton.click();
+        step("Нажать кнопку 'Почта'", () ->
+            enterAccountButton.click());
         return this;
     }
 
     public DtfPage openProfile() {
-        profileButton.click();
+        step("Нажать кнопку 'Профиль'", () ->
+            profileButton.click());
         return this;
     }
 
     public DtfPage checkProfileName(String name) {
-        profileName.shouldHave(text(name));
+        step("Проверка имени профиля", () ->
+            profileName.shouldHave(text(name)));
         return this;
     }
 }
