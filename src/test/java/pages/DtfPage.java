@@ -116,7 +116,7 @@ public class DtfPage {
 
     public DtfPage setLogPassword(String logPassword) {
         step("Ввести пароль", () ->
-            passwordInput.setValue(logPassword);
+            passwordInput.setValue(logPassword));
         return this;
     }
 
