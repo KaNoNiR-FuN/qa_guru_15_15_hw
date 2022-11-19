@@ -37,15 +37,15 @@ public class DtfPage {
     }
 
     public DtfPage checkMenuItems() {
-        step("Проверка отображения пункта меню 'Популярное'", () ->
+        step("Проверить отображение пункта меню 'Популярное'", () ->
             popularButton.shouldHave(text("Популярное")));
-        step("Проверка отображения пункта меню 'Свежее'", () ->
+        step("Проверить отображение пункта меню 'Свежее'", () ->
             newButton.shouldHave(text("Свежее")));
-        step("Проверка отображения пункта меню 'Вакансии'", () ->
+        step("Проверить отображение пункта меню 'Вакансии'", () ->
             jobsButton.shouldHave(text("Вакансии")));
-        step("Проверка отображения пункта меню 'Рейтинг DTF'", () ->
+        step("Проверить отображение пункта меню 'Рейтинг DTF'", () ->
             ratingButton.shouldHave(text("Рейтинг DTF")));
-        step("Проверка отображения пункта меню 'Подписки'", () ->
+        step("Проверить отображение пункта меню 'Подписки'", () ->
             subsButton.shouldHave(text("Подписки")));
         return this;
     }
@@ -57,7 +57,7 @@ public class DtfPage {
     }
 
     public DtfPage aboutProjectCheckHeader() {
-        step("Проверка заголовка страницы 'О проекте'", () ->
+        step("Проверить заголовок страницы 'О проекте'", () ->
             aboutProjectHeader.shouldHave(text("Что такое DTF")));
         return this;
     }
@@ -69,7 +69,7 @@ public class DtfPage {
     }
 
     public DtfPage industryCheckDescription() {
-        step("Проверка описания подсайта 'Индустрия'", () ->
+        step("Проверить описание подсайта 'Индустрия'", () ->
             subSiteHeaderDescription.shouldHave(text("Новости и статьи для тех," +
                     " кто хочет знать, как устроена игровая индустрия." +
                     " Тут публикуются чарты, аналитика, финансовые отчёты, анонсы мероприятий и мнения.")));
@@ -77,7 +77,7 @@ public class DtfPage {
     }
 
     public DtfPage search(String text) {
-        step("Ввести текст " + text + "  в поискую строку", () ->
+        step("Ввести текст в поискую строку", () ->
             searchInput.setValue(text));
         step("Нажать кнопку поиска", () ->
             searchResultButton.click());
@@ -85,7 +85,7 @@ public class DtfPage {
     }
 
     public DtfPage checkArticleHeaderInSearchResults(String headerText) {
-        step("Проверка, что заголовок статьи соответствует '" + headerText, () ->
+        step("Проверить заголовок статьи", () ->
             searchResultArticleHeader.shouldHave(text(headerText)));
         return this;
     }
@@ -133,7 +133,7 @@ public class DtfPage {
     }
 
     public DtfPage checkProfileName(String name) {
-        step("Проверка имени профиля", () ->
+        step("Проверить имя профиля", () ->
             profileName.shouldHave(text(name)));
         return this;
     }
