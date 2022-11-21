@@ -82,7 +82,7 @@ gradle clean test
 ## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/015-Kanonir_Fun-Lesson15/9/allure/)
 
 <p align="center">
-  <img src="images/allure-report1.png" alt="allure-report" width="900">
+  <img src="images/allure-report.png" alt="allure-report" width="900">
 </p>
 
 ## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/1688/dashboards)
