@@ -55,10 +55,10 @@ gradle clean test
 
 ```bash
 gradle clean test
--Dbrowser=${browser}
--DbrowserVersion=${browserVersion}
--DbrowserSize=${browserSize}
--DremoteUrl=${remoteUrl}
+-Dbrowser=${BROWSER}
+-DbrowserVersion=${BROWSER_VERSION}
+-DbrowserSize=${BROWSER_SIZE}
+-DremoteUrl=${REMOTE_URL}
 ```
 
 ## Параметры сборки
